@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+    <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+
+    <title>Solar System AR</title>
+
+    <script src="core.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <button class="backBtn">Return</button>
+    
+    <a-scene xrextras-gesture-detector id="example-scene" mindar-image="imageTargetSrc: ./targets.mind; filterMinCF:0.0001; filterBeta: 0.0001" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <assets>
+        <a-asset-item
+          id="earth"
+          src="./assets/Earth/earthGlb.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="jupiter"
+          src="./assets/Jupiter/jupiterGlb.glb"
+        ></a-asset-item>
+        <a-asset-item
+        id="mars"
+        src="./assets/Mars/marsGlb.glb"
+      ></a-asset-item>
+      <a-asset-item
+          id="mercury"
+          src="./assets/Mercury/mercuryGlb.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="neptune"
+          src="./assets/Neptune/neptuneGlb.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="saturn"
+          src="./assets/Saturn/saturnGlb.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="sun"
+          src="./assets/Sun/sunGlb.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="uranus"
+          src="./assets/Uranus/uranosGlb.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="venus"
+          src="./assets/Venus/venusGlb.glb"
+        ></a-asset-item>
+      </assets>
+      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: ${customFields.libVersion}; objects: .clickable"></a-camera>
+      
+      <a-entity id="example-target" mindar-image-target="targetIndex: 0" >       
+        
+        <a-entity
+          gltf-model="#earth"
+          scale="0.005 0.005 0.005"
+          rotation= "0 0 0"
+          animation__rotation= "property: rotation; to: 0 360 0; dur: 25000; easing: linear; loop: true;pauseEvents:pauseanim;resumeEvents:resumeanim"
+          position="-0.192 0.127 -0.4"
+          class="clickable"
+        >
+        </a-entity>
+
+        <a-entity
+          gltf-model="#jupiter"
+          scale="0.006 0.006 0.006"
+          rotation= "0 0 0"
+          animation__rotation= "property: rotation; to: 0 360 0; dur: 25000; easing: linear; loop: true;pauseEvents:pauseanim;resumeEvents:resumeanim"
+          position="0.088 0.109 -0.4"
+          class="clickable"
+        >
+        </a-entity>
+        <a-entity
+          gltf-model="#mars"
+          scale="0.007 0.007 0.007"
+          rotation= "0 0 0"
+          animation__rotation= "property: rotation; to: 0 360 0; dur: 25000; easing: linear; loop: true;pauseEvents:pauseanim;resumeEvents:resumeanim"
+          position="-0.108 0.104 -0.4"
+          class="clickable"
+        >
+        </a-entity>
+        <a-entity
+          gltf-model="#mercury"
+          scale="0.006 0.006 0.006"
+          rotation= "0 0 0"
+          animation__rotation= "property: rotation; to: 0 360 0; dur: 25000; easing: linear; loop: true;pauseEvents:pauseanim;resumeEvents:resumeanim"
+          position="-0.319 0.093 -0.4"
+          class="clickable"
+        >
+        </a-entity>
+        <a-entity
+          gltf-model="#neptune"
+          scale="0.006 0.006 0.006"
+          rotation= "0 0 0"
+          animation__rotation= "property: rotation; to: 0 360 0; dur: 25000; easing: linear; loop: true;pauseEvents:pauseanim;resumeEvents:resumeanim"
+          position="0.581 0.148 -0.4"
+          class="clickable"
+        >
+        </a-entity>
+        <a-entity
+          gltf-model="#saturn"
+          scale="0.006 0.006 0.006"
+          rotation= "0 0 0"
+          animation__rotation= "property: rotation; to: 0 360 0; dur: 25000; easing: linear; loop: true;pauseEvents:pauseanim;resumeEvents:resumeanim"
+          position="0.297 0.094 -0.4"
+          class="clickable"
+        >
+        </a-entity>
+        
+        <a-entity
+          gltf-model="#sun"
+          scale="0.006 0.006 0.006"
+          rotation= "0 0 0"
+          animation__rotation= "property: rotation; to: 0 360 0; dur: 25000; easing: linear; loop: true;pauseEvents:pauseanim;resumeEvents:resumeanim"
+          position="-0.577 0.115 -0.4"
+          class="clickable"
+        >
+          
+        </a-entity>
+        <a-entity
+          gltf-model="#uranus"
+          scale="0.006 0.006 0.006"
+          rotation= "0 -90 0"
+          animation__rotation= "property: rotation; to: 0 -90 360; dur: 25000; easing: linear; loop: true;pauseEvents:pauseanim;resumeEvents:resumeanim"
+          position="0.479 0.179 -0.4"
+          class="clickable"
+        >
+          
+        </a-entity>
+        <a-entity
+          gltf-model="#venus"
+          scale="0.006 0.006 0.006"
+          rotation= "0 0 0"
+          animation__rotation= "property: rotation; to: 0 360 0; dur: 25000; easing: linear; loop: true;pauseEvents:pauseanim;resumeEvents:resumeanim"
+          position="-0.259 0.072 -0.4"
+          class="clickable"
+        >
+          
+        </a-entity>
+        
+        <a-plane id="background" position="0 0 -0.2" width="100" height="100" color="#000" opacity='0.8' visible="false" material="blending:none;side:double"></a-plane>
+      </a-entity>
+    </a-scene>
+
+    <div class="planet-descriptions">
+      <h1 class="planet-name"></h1>
+      <p class="planet-description"></p>
+    </div>
+  </body>
+</html>
